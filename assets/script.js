@@ -4,20 +4,24 @@ let minutes = 0;
 let hours = 0;
 let interval;
 
-function init() { //Botão Inicio
-    watch();
+function init() {
+    clearInterval(interval); // Limpa qualquer intervalo anterior para evitar múltiplas contagens simultâneas
     interval = setInterval(watch, 1000);
 }
 
-const pause = () => { // Botão Pausar
-    clearInterval(interval); // para o intervalo e com isso pausa a contagem
+const pause = () => {
+    clearInterval(interval); // Pausa o intervalo atual
 }
 
-const stop = () => { // Botão Zerar
-    watchDocument.innerHTML = "00:00:00"; //zerar tudo
+const stop = () => {
+    clearInterval(interval); // Limpa o intervalo atual
+    watchDocument.innerHTML = "00:00:00"; // Zera o contador
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
 }
 
-const digitZero = (digit) => { 
+const digitZero = (digit) => {
     if (digit < 10) {
         return "0" + digit;
     } else {
