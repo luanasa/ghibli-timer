@@ -1,7 +1,7 @@
 body {
     background: gainsboro;
     color: rgb(234, 224, 224);
-    background-image: url(back.png);
+    background-image: url(/assets/img/10.gif);
     background-size: cover;
 }
 
