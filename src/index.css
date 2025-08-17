@@ -1,69 +1,119 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Cute Pixel Art Forest Timer Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11.2%;
+    /* Forest Color Palette */
+    --background: 46 15% 92%; /* Soft cream beige */
+    --foreground: 120 15% 25%; /* Deep forest green */
     
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Pixel Art Window Colors */
+    --window-bg: 120 25% 88%; /* Light sage green */
+    --window-border: 30 12% 75%; /* Warm beige border */
+    --window-shadow: 120 8% 65%; /* Soft shadow */
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Timer Colors */
+    --timer-work: 90 35% 75%; /* Warm golden beige */
+    --timer-break: 150 30% 75%; /* Soft mint green */
+    --timer-text: 120 20% 20%; /* Dark forest text */
     
-    --primary: 196 65% 67%;
-    --primary-foreground: 210 40% 98%;
+    /* Creature Colors */
+    --sprout-green: 110 40% 65%; /* Fresh plant green */
+    --bunny-cream: 35 25% 85%; /* Bunny cream */
+    --totoro-gray: 200 8% 70%; /* Totoro gray-blue */
     
-    --secondary: 84 25% 65%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    
-    --accent: 36 46% 78%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    
-    --radius: 1rem;
+    /* UI Elements */
+    --button-primary: 85 30% 70%; /* Warm sandy beige */
+    --button-hover: 85 35% 65%; /* Darker sandy */
+    --accent: 120 35% 60%; /* Forest accent */
+    --muted: 45 15% 80%; /* Soft muted tone */
+
+    /* Shadcn Tokens mapped to forest theme */
+    --card: 120 25% 88%;
+    --card-foreground: 120 20% 20%;
+
+    --popover: 120 25% 88%;
+    --popover-foreground: 120 20% 20%;
+
+    --primary: 85 30% 70%;
+    --primary-foreground: 120 20% 20%;
+
+    --secondary: 150 30% 75%;
+    --secondary-foreground: 120 20% 20%;
+
+    --muted: 45 15% 80%;
+    --muted-foreground: 120 15% 40%;
+
+    --accent: 120 35% 60%;
+    --accent-foreground: 120 20% 20%;
+
+    --destructive: 0 50% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 12% 75%;
+    --input: 30 12% 75%;
+    --ring: 120 35% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
- 
+
   .dark {
-    --background: 222 47% 11.2%;
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
-    --card: 222 47% 11.2%;
+
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
-    --primary: 196 50% 45%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 84 15% 40%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
-    --accent: 36 30% 48%;
+
+    --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -71,40 +121,88 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground antialiased transition-colors duration-300;
-    font-feature-settings: "ss01";
+    @apply bg-background text-foreground font-mono;
+    background-image: 
+      linear-gradient(45deg, hsl(var(--muted)) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(var(--muted)) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(var(--muted)) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(var(--muted)) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   }
+}
+
+@layer components {
+  /* Pixel Art Window Style */
+  .pixel-window {
+    @apply relative bg-card border-4 border-border shadow-lg;
+    border-style: solid;
+    border-image: none;
+    image-rendering: pixelated;
+    box-shadow: 
+      4px 4px 0px hsl(var(--window-shadow)),
+      inset 2px 2px 0px rgba(255,255,255,0.3);
+  }
+  
+  /* Pixel Font Style */
+  .pixel-text {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    letter-spacing: 2px;
+    image-rendering: pixelated;
+  }
+  
+  /* Timer Display */
   .timer-display {
-    @apply font-mono text-6xl sm:text-7xl md:text-8xl tracking-tight;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    @apply pixel-text text-6xl;
+    color: hsl(var(--timer-text));
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
   }
-  .button-hover {
-    @apply transition-all duration-300 hover:scale-105 active:scale-95;
+  
+  /* Cute Button Style */
+  .pixel-button {
+    @apply pixel-text border-2 border-border px-6 py-3 transition-all duration-200;
+    background: hsl(var(--button-primary));
+    box-shadow: 
+      2px 2px 0px hsl(var(--window-shadow)),
+      inset 1px 1px 0px rgba(255,255,255,0.3);
   }
-  .glassmorphism {
-    @apply bg-white/20 dark:bg-black/20 backdrop-blur-lg border border-white/30 dark:border-white/10;
+  
+  .pixel-button:hover {
+    background: hsl(var(--button-hover));
+    transform: translate(1px, 1px);
+    box-shadow: 
+      1px 1px 0px hsl(var(--window-shadow)),
+      inset 1px 1px 0px rgba(255,255,255,0.3);
   }
-  .floating {
-    animation: float 6s ease-in-out infinite;
+  
+  /* Creature Animation */
+  .creature-float {
+    animation: float 3s ease-in-out infinite;
   }
-  .ghibli-shadow {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
-                0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
   }
-}
-
-html, body, #root {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-#root {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+  
+  /* Message Box */
+  .message-bubble {
+    @apply bg-card border-2 border-border rounded-lg p-4 relative;
+    box-shadow: 2px 2px 0px hsl(var(--window-shadow));
+  }
+  
+  .message-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid hsl(var(--card));
+  }
 }
