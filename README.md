@@ -2,6 +2,9 @@
 
 Welcome to the **Pixel Forest Pomodoro Timer**, a charming pixel art timer inspired by cozy forests and Studio Ghibli vibes!
 
+<img width="1597" height="1080" alt="frame_safari_light" src="https://github.com/user-attachments/assets/e4db6cac-1367-4c5a-adc5-e2f5ac9ee2ed" />
+
+
 ## Features
 
 - **Adorable Pixel Creatures**: Enjoy cute forest friends floating around as you work.  
@@ -38,3 +41,4 @@ Each button has its own delightful forest-inspired sound:
 ---
 
 Bring a little forest magic to your productivity! 🌿
+
